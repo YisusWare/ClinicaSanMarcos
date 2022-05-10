@@ -1,0 +1,526 @@
+:root{
+    --main-blue:rgb(170, 245, 255) ;
+    --warm-black: rgb(22, 21, 21);
+    --warm-gray: rgb(145, 155, 167);
+    --petrolium-green: rgb(19, 133, 104); 
+    --md: 16px;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family: 'Roboto', sans-serif;
+}
+
+.show{
+    display: flex !important;
+}
+
+header{
+    
+    background-image: url(./img/smile-girl-mobile.jpg);
+    height: 500px;
+    background-position: bottom center;
+    background-size: cover ;
+    background-repeat: no-repeat;
+    position: relative;
+
+}
+
+header .header-mobile{
+    display: flex;
+    justify-content:space-between;
+    background-color: white;
+}
+.menu-desktop{
+    display: none;
+}
+header .header-mobile .header-right,footer .footer-right{
+    width:190px; 
+    position: relative;
+}
+
+header .header-mobile .header-right img:nth-child(2),
+footer .footer-right img:nth-child(2){
+    position: absolute;
+    bottom: 5px;
+    left: 110px;
+}
+header .header-mobile #menu-button{
+    background-color: transparent;
+    margin: 10px;
+    display: block;
+    border: none;
+    cursor: pointer;
+    height: 30px;
+}
+
+.links{
+width:150px ; 
+display: none;
+flex-direction: column;
+background-color: var(--warm-black);
+position: absolute;
+left: 0;
+top: 40px;
+z-index: 250;
+
+}
+.links a{
+    padding: 5px 0 5px 10px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    border-left: 2px solid transparent;
+}
+
+.links a:hover{
+    border-left: 2px solid gray;
+    background-color: var(--warm-gray);
+}
+
+.objective-card{
+    width: 280px;
+    height: 210px;
+    background-color: rgb(0,0,0,0.6);
+    position: absolute;
+    bottom: 80px;
+    left: calc( 100%/2 - 140px);
+    padding: 10px;
+    
+}
+
+.objective-card h3{
+    color: rgb(170, 245, 255);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.objective-card p{
+    color: white;
+    margin-bottom: 10px; ;
+
+}
+
+.objective-card .date-button{
+    margin: 0 auto;
+    
+}
+.main-button{
+    width: 160px;
+    height: 60px;
+    display: block;
+    background-color: transparent;
+    border: 3px solid var(--petrolium-green);
+    color: white;
+    font-weight: 700;
+    border-radius: 30px;
+    font-size: var(--md);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+.main-button span{
+    width: 100px;
+    z-index: 2;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.main-button::before{
+    content: "";
+    width: 200px;
+    height: 61px;
+    background-color: var(--petrolium-green);
+    position: absolute;
+    right: 160px;
+    top: 0;
+    border-radius: 30px;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.main-button:hover{
+    transform: scale(1.1);
+    border: none;
+    
+}
+.main-button:hover span{
+    font-size: 18px;
+    
+}
+.main-button:hover::before{
+    right: 0;
+}
+
+/*POR QUE CLINICA SAN MARCOS*/
+
+main .por-que-section{
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    padding: 10px;
+    background-color: var(--main-blue);
+    color: black;
+}
+
+main .por-que-section h2{
+    width: 80%;
+    max-width: 400px;
+    margin: 20px auto 15px auto; 
+    
+}
+main .por-que-section .reason-text{
+    width: 80%;
+    max-width: 400px;
+    padding-bottom: 20px ;
+    
+}
+main .por-que-section .reason-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/*SERVICIOS*/
+
+.services{
+    width:100%;
+    height: 400px;
+    margin-top: 20px;
+}
+
+.services h2{
+    width: 215px;
+    margin: 0 auto 20px auto;
+}
+
+.services .service-card-container{
+    display: flex;
+    flex-wrap: nowrap;
+    height:400px ;
+    overflow-x: scroll;
+    overscroll-behavior-x:contain;
+    scroll-snap-type: x proximity;
+    
+}
+
+
+.service-card{
+    position:relative;
+    scroll-snap-align: center;
+    width: 280px;
+    min-width: 280px;
+    height: 250px;
+    margin: 30px 20px 0 20px;
+    box-shadow: 2px 10px 12px rgba(0,0,0,0.8);
+    
+}
+
+.service-card img{
+    width: 280px ;
+}
+
+.service-card h3{
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+
+.first-card{
+    margin-left: 60px;
+}
+.last-card{
+    margin-right: 60px;
+}
+.services .service-card-container::-webkit-scrollbar{
+    display: none;
+}
+
+.free-date{
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+}
+.free-date .main-button{
+    margin: 20px auto;
+}
+
+/*TESTIMONIOS*/
+
+.testimonials{
+    background-color: rgba(0,0,0,0.8);
+    text-align: center;
+    color: white;
+    
+}
+
+.testimonials-cards-container{
+    display: grid;
+    grid-auto-flow: row;
+    justify-content: center;
+    margin-top: 20px;
+    grid-auto-rows: 400px;
+
+}
+
+.testimonial-card{
+    width: 80vw;
+    height: 350px;
+    min-width: 280px;
+    max-width: 300px;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    box-shadow: 4px 4px 20px 4px var(--warm-black);
+}
+
+.testimonial-card .costumer-info{
+    display: flex;
+    
+}
+
+.testimonial-card .costumer-info .costumer-data{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+    padding-top: 20px;
+}
+
+.testimonial-card .costumer-info .costumer-data p{
+    color: var(--warm-gray);
+    font-weight: 100;
+}
+
+.testimonial-card .testimonial-text{
+    border-top: 1px solid var(--warm-black);
+    margin-top: 20px;
+    padding-top: 20px;
+    color: var(--warm-gray);
+    font-weight: 100;
+}
+
+.doctor-card{
+    width: 80%;
+    min-width: 280px;
+    max-width: 450px;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    min-height: 300px;
+    background-color: var(--petrolium-green);
+    margin: 20px auto 30px auto;
+
+    color: white;
+    box-shadow: 2px 2px 10px 2px var(--warm-black);
+}
+.doctor-card .doctor-data{
+    width: 150px;
+    margin: 10px 0 0 10px;
+}
+
+.doctor-card .doctor-data p{
+    color: white;
+    font-weight: 100;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: var(--petrolium-green);
+    padding-top:  20px; ;
+    
+}
+
+footer div:nth-child(1){
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+footer .social-media{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+footer .social-media .icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.credits{
+    color: white;
+    margin-top: 30px;
+    border-top: 1px solid  white;
+    padding: 10px;
+}
+.credits ul{
+    
+    font-weight: 300;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.credits a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 675px){
+    header{
+    
+        background-image: url(./img/smile-girl-desktop.jpg);
+        height: 600px;
+        background-position: bottom center;
+        background-size: cover ;
+        background-repeat: no-repeat;
+    
+    }
+    header .header-mobile #menu-button{
+        display: none;
+
+    }
+    
+    header .header-mobile{
+        justify-content: center;
+    }
+
+    .menu-desktop {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: var(--main-blue);
+    }
+
+    .menu-desktop ul{
+        display: flex;
+        justify-content: center;
+        width: 80%;
+        list-style: none;
+    }
+
+    .menu-desktop ul a{
+        width: 100px;
+        text-align: center;
+        display: block;
+        padding: 20px 0;
+        text-decoration: none;
+        color: black;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease;
+    }
+
+    .menu-desktop ul a:hover{
+        background-color: aliceblue;
+        border-bottom: 2px solid var(--petrolium-green);
+    }
+
+    .services{
+        height: 650px;
+    }
+
+    .services .service-card-container{
+        height: 600px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .services .service-card-container::-webkit-scrollbar{
+        display: none;
+    }
+    .first-card{
+        margin-left: 20px;
+    }
+    .last-card{
+        margin-right: 20px;
+    }
+
+    .testimonials-cards-container{
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: repeat(2,50%);
+        justify-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        grid-auto-rows: 400px;
+    
+    }
+    footer div:nth-child(1){
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    footer .footer-right img:nth-child(2){
+        bottom: 20px;
+    }
+    .credits ul{
+        flex-direction: row;
+    }
+    .credits ul li{
+        padding: 0 10px;
+        list-style: none;
+    }
+
+}
+
+@media screen and (min-width: 1200px){
+    header{
+        
+        background-image: url(./img/smile-girl-desktop.jpg);
+        height: 600px;
+        background-position: top center;
+        background-size: contain ;
+        background-repeat: no-repeat;
+    
+    }
+
+    main .por-que-section .reason-text{
+        max-width: 500px;
+        
+    }
+
+    .services .service-card-container{
+        height: 400px;
+    }
+    .services{
+        height: 400px;
+    }
+
+    .testimonials-cards-container{
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: repeat(4,25%);
+        justify-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        grid-auto-rows: 400px;
+    
+    }
+
+    
+
+  
+}
+
+
+
